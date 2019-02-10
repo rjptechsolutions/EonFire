@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <h1>EonFest </h1>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="events.html">Events</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- Form -->
+    <div class="inner">
+        <div class="flex flex-center">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <h3>Registration</h3>
+                <div class="alert" style="text-align:center; background:#79c879; color:white; margin: 10px; display:none;  ">
+                    You Are Register Now
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+
+    <form method="post" id="regForm" style="margin-left:5rem;margin-right:5rem;">
+        <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+                <input type="text" name="uname" id="uname" value="" placeholder="Name" required>
+            </div>
+            <div class="6u$ 12u$(xsmall)">
+                <input type="email" name="email" id="email" value="" placeholder="Email" required />
+            </div>
+
+            <div class="6u 12u$(xsmall)">
+                <input type="text" name="phone" id="phone" value="" placeholder="Phone" required />
+            </div>
+            <!-- Break -->
+            <div class="6u$ 12u$(xsmall)">
+                <div class="select-wrapper">
+                    <select name="evtname" id="evtname">
+                        <option selected="true" disabled="disabled">Event</option>
+                        <option value="Tomorrowland">Tomorrowland</option>
+                        <option value="Awakenings_Festival">Awakenings Festival</option>
+                        <option value="Sonar_Festival">Sónar Festival</option>
+                        <option value="Outlook">Dimensions / Outlook </option>
+                        <option value="UltraE">Ultra Europe</option>
+                        <option value="Boomtown">Boomtown</option>
+                        <option value="EXITF">EXIT Festival</option>
+                        <option value="SonusF">Sonus Festival</option>
+                        <option value="Creamfields">Creamfields</option>
+                        <option value="NuitsS">Nuits Sonores </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="12u$">
+                <input type="submit" value="Register">
+            </div>
+
+        </div>
+    </form>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="copyright">
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a>
+                </li>
+            </ul>
+            Copyright EonFest: &copy; 2019
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="/assets/js/register.js "></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

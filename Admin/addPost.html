@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>FirebaseDataStore</title>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <div class="navbar" id="mainnav">
+      <a href="/Admin/ahome.html">AdminHome</a>
+      <a href="/Admin/regDetails.html">Registration Details</a>
+      <a href="/Admin/conDetails.html">Contact Details</a>
+      <a href="/Admin/addPost.html">Add Posts</a>
+      <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()"
+        >&#9776;</a
+      >
+    </div>
+
+    <div class="row" style="margin: 5px; padding:2px;">
+      <h3>Add Posts</h3>
+      <div
+        class="alert"
+        style="text-align:center; background:#79c879; color:white; margin: 10px; display:none;  "
+      >
+        Your Post has been Posted
+      </div>
+    </div>
+    <!-- form -->
+    <div style="margin-left: 10px; padding:10px;">
+      <form id="addPosts">
+        <div class="row">
+          <div class="six columns">
+            <label for="exampleEmailInput">Title</label>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder=""
+              id="title"
+              required
+            />
+            <div
+              class="alert"
+              style="text-align:center; background:#79c879; color:white; margin: 10px; display:none;  "
+            >
+              Your Post has been Posted
+            </div>
+          </div>
+          <div class="six columns">
+            <label for="exampleEmailInput">City</label>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="New York"
+              id="city"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="six columns">
+            <label for="exampleEmailInput">Poster</label>
+            <input
+              class="u-full-width"
+              type="file"
+              placeholder=""
+              id="file"
+              required
+            />
+          </div>
+          <div class="six columns">
+            <label for="exampleEmailInput">Entry Fees</label>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="120"
+              id="price"
+              required
+            />
+          </div>
+        </div>
+        <label for="exampleMessage">Description</label>
+        <textarea
+          class="u-full-width"
+          placeholder="Hi Dave …"
+          id="desc"
+          required
+        ></textarea>
+        <input class="button-primary" type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <footer>
+      <div class="section get-help">
+        <div class="container">
+          <h3 class="section-heading">Eon</h3>
+          <p class="section-description">
+            Copyright &copy; <span class="year"></span> EonFest
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

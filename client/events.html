@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Events</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body class="subpage">
+
+    <!-- Header -->
+    <header id="header">
+        <h1>EonFest </h1>
+        <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="events.html">Events</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="inner">
+        <div class="flex flex-center">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <h3>Events</h3>
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+    <!-- Three -->
+    <div style="margin-left: 10px; padding:10px;">
+        <table class="u-full-width" id="cond">
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 3 Column Video Section -->
+                <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    // Initialize Firebase
+                    var config = {
+                        apiKey: "AIzaSyAWCh3DLXxWz7ES9xTa3058_lnIT8edWEA",
+                        authDomain: "eonfest-756df.firebaseapp.com",
+                        databaseURL: "https://eonfest-756df.firebaseio.com",
+                        projectId: "eonfest-756df",
+                        storageBucket: "eonfest-756df.appspot.com",
+                        messagingSenderId: "998309717287"
+                    };
+                    firebase.initializeApp(config);
+                    //Reference messages collection
+                    var messageRef = firebase.database().ref('posts').once('value', function (snapshot) {
+                        if (snapshot.exists()) {
+                            var content = '';
+                            snapshot.forEach(function (data) {
+                                var val = data.val();
+                                content += '<tr>';
+                                content +=
+                                    "<td align='center'><img style='text-align:center' src='" +
+                                    val.imgpath +
+                                    "'/></td>";
+
+                                content += "</tr>  ";
+                                content += "<tr>  ";
+                                content += "<td><p ><h4 style='text-align:center'>" + val.title +
+                                    "</h4></p> <p  style='text-align:center'>City " + val.city +
+                                    "</p> <p  style='text-align:center'>Price  " + val.price +
+                                    "</p> <p  style='text-align:center'>Description " + val.description +
+                                    "</p></td > ";
+                                content += "<td>"
+                                "</td > ";
+                                content += "</tr>  ";
+
+                            });
+                            $('#cond').append(content);
+                        }
+                    });
+                </script>
+    </div>
+    </div>
+
+
+
+
+    <!-- Scripts -->
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <!-- Footer -->
+
+</body>
+
+</html>

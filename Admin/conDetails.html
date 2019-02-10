@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>FirebaseDataStore</title>
+</head>
+
+<body>
+    <!--navbar-->
+    <div class="navbar" id="mainnav">
+        <a href="ahome.html">AdminHome</a>
+        <a href="/regd">Registration Details</a>
+        <a href="conDetails.html">Contact Details</a>
+        <a href="/post">Posts</a>
+        <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()">&#9776;</a>
+    </div>
+
+    <div class="row" style="margin: 5px; padding:2px;">
+        <h3>Contact Details</h3>
+    </div>
+    <!-- form -->
+    <div style="margin-left: 10px; padding:10px;">
+        <table class="u-full-width" id="cond">
+            <thead>
+                <tr>
+                    <th>EmailID</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    // Initialize Firebase
+                    var config = {
+                        apiKey: "AIzaSyAWCh3DLXxWz7ES9xTa3058_lnIT8edWEA",
+                        authDomain: "eonfest-756df.firebaseapp.com",
+                        databaseURL: "https://eonfest-756df.firebaseio.com",
+                        projectId: "eonfest-756df",
+                        storageBucket: "eonfest-756df.appspot.com",
+                        messagingSenderId: "998309717287"
+                    };
+                    firebase.initializeApp(config);
+                    //Reference messages collection
+                    var messageRef = firebase.database().ref('messages').once('value', function (snapshot) {
+                        if (snapshot.exists()) {
+                            var content = '';
+                            snapshot.forEach(function (data) {
+                                var val = data.val();
+                                content += '<tr>';
+                                content += '<td>' + val.mail + '</td>';
+                                content += '<td>' + val.subject + '</td>';
+                                content += '<td>' + val.msg + '</td>';
+                                content += '</tr>';
+                            });
+                            $('#cond').append(content);
+                        }
+                    });
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="section get-help">
+            <div class="container">
+                <h3 class="section-heading">Eon</h3>
+                <p class="section-description">
+                    Copyright &copy; <span class="year"></span> EonFest
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
