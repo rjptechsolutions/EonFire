@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var provider = new firebase.auth.GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 // lisen for form submit
-document.getElementById('glogin').addEventListener('click', LoginForm);
+document.getElementById('glogin').addEventListener('submit', LoginForm);
 //submit form
 function LoginForm(e) {
     e.preventDefault();
